@@ -45,31 +45,42 @@ class Sorts{
         }
         return arr;
     }     
-
-    // 
-    public static int partition(int [] a, int lowerbound, int upperbound){
-        int pivot = a[upperbound];
-        int i = lowerbound-1;
-        for (int j=lowerbound; j<upperbound; j++){
-            if(a[j]<=pivot){
+    
+    // Quick Sort
+    public void quickSort(int[] array, int low, int high) {
+        if (array == null || array.length == 0){
+            return;
+        }     
+        if (low >= high){
+            return;
+        }
+        // pick the pivot
+        int middle = low + (high - low) / 2;
+        int pivot = array[middle];
+     
+        // make left < pivot and right > pivot
+        int i = low, j = high;
+        while (i <= j) {
+            while (array[i] < pivot) {
                 i++;
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
             }
-        }
-        int temp = a[i+1];
-        a[i+1] = a[upperbound];
-        a[upperbound] = temp;
-        return (i+1);
-    }
-
-    public static void quickSort(int [] a, int lowerbound, int upperbound){
-        if(lowerbound<upperbound){
-            int location = partition(a, lowerbound, upperbound);
-            quickSort(a, lowerbound, location-1);
-            quickSort(a, location+1, upperbound);
-        }
+            while (array[j] > pivot) {
+                j--;
+            }     
+            if (i <= j) {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+                i++;
+                j--;
+            }
+        }    
+        // recursively sort two sub parts
+        if (low < j)
+            quickSort(array, low, j);
+     
+        if (high > i)
+            quickSort(array, i, high);
     }
     public long TimeCalculator(long b, long a){
         return (a-b);
@@ -102,7 +113,7 @@ public class Task1_1D_Sorting {
         System.out.println("Quick Sort()  -->   "+Arrays.toString(array));
         long after4 = System.nanoTime();
         
-        System.out.println("Execution time of Bubble Sort() method is "+s.TimeCalculator(before1, after1));
+        System.out.println("\nExecution time of Bubble Sort() method is "+s.TimeCalculator(before1, after1));
         System.out.println("Execution time of Insertion Sort() method is "+s.TimeCalculator(before2, after2));
         System.out.println("Execution time of Selection Sort() method is "+s.TimeCalculator(before3, after3));
         System.out.println("Execution time of Quick Sort() method is "+s.TimeCalculator(before4, after4));
