@@ -90,7 +90,6 @@ class Sorts{
 }
 
 public class Task1_1D_Sorting {
-   
     public static void main(String[] args) {
         
         int [] array = {4, -6, 5, 7, 8, 9, 1, 10, -9};
@@ -113,9 +112,9 @@ public class Task1_1D_Sorting {
         System.out.println("Quick Sort()  -->   "+Arrays.toString(array));
         long after4 = System.nanoTime();
         
-        System.out.println("\nExecution time of Bubble Sort() method is "+s.TimeCalculator(before1, after1));
-        System.out.println("Execution time of Insertion Sort() method is "+s.TimeCalculator(before2, after2));
-        System.out.println("Execution time of Selection Sort() method is "+s.TimeCalculator(before3, after3));
-        System.out.println("Execution time of Quick Sort() method is "+s.TimeCalculator(before4, after4));
+        System.out.println("\n\nExecution time of Bubble Sort() method is -->   "+s.TimeCalculator(before1, after1));
+        System.out.println("Execution time of Insertion Sort() method is -->   "+s.TimeCalculator(before2, after2));
+        System.out.println("Execution time of Selection Sort() method is -->   "+s.TimeCalculator(before3, after3));
+        System.out.println("Execution time of Quick Sort() method is -->   "+s.TimeCalculator(before4, after4));
     }
 }
