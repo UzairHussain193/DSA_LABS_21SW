@@ -1,4 +1,5 @@
 
+import java.lang.reflect.Array;
 import java.text.CollationElementIterator;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -108,14 +109,16 @@ public class Task2_2D_Sorting {
     public static void main(String[] args) {
 
         int [][] matrix = {{2, 10, 15}, {5, 1, 3}, {6, 9, 4}};
-        System.out.println(Arrays.deepToString(bubbleSort(matrix)));
-        System.out.println(Arrays.deepToString(selectionSort(matrix)));
-        System.out.println(Arrays.deepToString(insertionSort(matrix)));
+        System.out.println("Original Matrix:    "+Arrays.deepToString(matrix));
+        System.out.println("\n\tSorted Matrices.\n");
+        System.out.println("Bubble Sort:    "+Arrays.deepToString(bubbleSort(matrix)));
+        System.out.println("Selection Sort:    "+Arrays.deepToString(selectionSort(matrix)));
+        System.out.println("Insertion Sort:    "+Arrays.deepToString(insertionSort(matrix)));
 
         int [] array = conversionIn1D(matrix);
         quickSort(array, 0, array.length-1);
         matrix  = conversionIn2D(array, matrix.length, matrix[0].length);
-        System.out.println(Arrays.deepToString(matrix));
+        System.out.println("Quick Sort:    "+Arrays.deepToString(matrix));
 
     }   //  end of main() method
 }      //  end of program

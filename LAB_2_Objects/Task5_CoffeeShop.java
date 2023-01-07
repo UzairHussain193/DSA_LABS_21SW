@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Task4_CoffeShop{
+class Task5_CoffeShop{
     double coffeePrice=5.50;
     double small_p=0.60,medium_p=1.00,large_p=1.80;
     int small_c=5,medium_c=10,large_c=20;
@@ -8,7 +8,7 @@ class Task4_CoffeShop{
     int small=1,medium=1,large=2;
     double Total_Cost=0;
 
-    Task4_CoffeShop(int numberbags){
+    Task5_CoffeShop(int numberbags){
         bags_order=numberbags;
     }
 
@@ -21,7 +21,7 @@ class Task4_CoffeShop{
         Scanner s = new Scanner(System.in);
         System.out.print("Enter number of coffee bags: ");
         int num=s.nextInt();
-        Task4_CoffeShop c=new Task4_CoffeShop(num);
+        Task5_CoffeShop c=new Task5_CoffeShop(num);
         c.Total_Cost();
     }
 
