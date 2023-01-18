@@ -25,7 +25,7 @@ class Sorts{
                 arr[j+1] = arr[j];
                 j--;
             }
-            arr[j] = temp;
+            arr[j+1] = temp;
         }
         return arr;
     }        
