@@ -25,7 +25,7 @@ class Sorts{
                 arr[j+1] = arr[j];
                 j--;
             }
-            arr[j+1] = temp;
+            arr[j] = temp;
         }
         return arr;
     }        
@@ -39,9 +39,11 @@ class Sorts{
                     minIndex = j;
                 }
             }
+            if(minIndex!=i){
                 int temp = arr[i];
                 arr[i] = arr[minIndex];
                 arr[minIndex] = temp;
+            }
         }
         return arr;
     }     
@@ -101,7 +103,7 @@ public class Task1_1D_Sorting {
         
         long before2 = System.nanoTime();
         System.out.println("Insertion Sort()  -->   "+Arrays.toString(s.Insertion_Sort(array)));
-        long after2 = System.nanoTime();
+        long after2 = System.nanoTime(); 
             
         long before3 = System.nanoTime();
         System.out.println("Selection Sort()  -->   "+Arrays.toString(s.Selection_Sort(array)));
