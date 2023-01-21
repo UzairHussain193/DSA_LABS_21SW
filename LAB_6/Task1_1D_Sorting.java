@@ -57,9 +57,8 @@ class Sorts{
             return;
         }
         // pick the pivot
-        int middle = low + (high - low) / 2;
-        int pivot = array[middle];
-     
+        // int middle = low + (high - low) / 2;
+        int pivot = array[low]; 
         // make left < pivot and right > pivot
         int i = low, j = high;
         while (i <= j) {
@@ -84,8 +83,8 @@ class Sorts{
         if (high > i)
             quickSort(array, i, high);
     }
-    public long TimeCalculator(long b, long a){
-        return (a-b);
+    public long TimeCalculator(long a, long b){
+        return (b-a);
     }
 
 

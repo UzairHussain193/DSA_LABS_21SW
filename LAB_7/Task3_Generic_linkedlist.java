@@ -1,5 +1,5 @@
 
-class Task3_Generic_linkedlist<T> {
+class Task3_Generic_linkedlist<T extends Comparable<T>> {
     Node<T> head;
     int size;
 
@@ -21,14 +21,15 @@ class Task3_Generic_linkedlist<T> {
         return head == null;
     }
 
-    public int getSize() {                      // it checks the size of linkedlist
-        return size;
+    public void getSize() {                      // it checks the size of linkedlist
+        System.out.println("Size of linkedlist is: "+size); 
     }
 
     public void add(T data) {                   // adding elements in linkedlist, it adds at last generally
         Node<T> newNode = new Node<T>(data);
         newNode.next = head;
         head = newNode;
+        size++;
     }
 
     public void insertAtFirst(T data) {         // specific method to add element at start of linkedlist by adding new node 
@@ -145,6 +146,36 @@ class Task3_Generic_linkedlist<T> {
         return false;
     }
 
+    public T findLargest() {
+        if (head == null) {
+            throw new IllegalStateException("List is empty");
+        }
+        T max = head.data;
+        Node<T> current = head.next;
+        while (current != null) {
+            if (current.data.compareTo(max) > 0) {
+                max = current.data;
+            }
+            current = current.next;
+        }
+        return max;
+    }
+
+    public T findLowest() {
+        if (head == null) {
+            throw new IllegalStateException("List is empty");
+        }
+        T min = head.data;
+        Node<T> current = head.next;
+        while (current != null) {
+            if (current.data.compareTo(min) < 0) {
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
+    }
+
     public void display() {             //method to display linkedlist
         Node<T> current = head;
         System.out.print(" [ ");
@@ -157,6 +188,7 @@ class Task3_Generic_linkedlist<T> {
     public static void main(String[] args) {
         Task3_Generic_linkedlist<Integer> t=new Task3_Generic_linkedlist<Integer>();
 
+        t.getSize();
         t.add(2);
         t.add(7);
         t.add(8);
@@ -174,6 +206,10 @@ class Task3_Generic_linkedlist<T> {
         t.display();
         // checking size of list
         t.getSize();
+        //finding largest element in list
+        System.out.println(t.findLargest());
+        //finding lowest element in list
+        System.out.println(t.findLowest());
         //searching by number 
         System.out.println(t.search(7));
         //deleting at specific position and deleting value directly
@@ -188,7 +224,5 @@ class Task3_Generic_linkedlist<T> {
         //displaying list again
         t.display();
         
-
-
     }
 }
