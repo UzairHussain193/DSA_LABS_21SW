@@ -11,7 +11,6 @@ class Music {
     public Music (String song){
         this.song=song;
     }
-    
 
 
     int menu() {
