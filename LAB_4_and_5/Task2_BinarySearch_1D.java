@@ -4,19 +4,19 @@ import java.util.Scanner;
 class BinSearch {
 
     static int SinSearch(int[] a, int x) {
-        int p = 0;
-        int q = a.length - 1;
-        while (p <= q) {
-            int i = (p + q) / 2;
-            if (x == a[i]) {
-                return i;
-            } else if (a[i] < x) {
-                p = i + 1;
+        int low = 0;
+        int high = a.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (x == a[mid]) {
+                return mid;
+            } else if (a[mid] < x) {
+                low = mid + 1;
             } else {
-                q = i - 1;
+                high = mid - 1;
             }
         }
-        return -5;
+        return -9;
     }
 
     // static void DSearch(int[][] arr, int target) {
@@ -53,7 +53,7 @@ class Task2_BinarySearch_1D {
         System.out.print("Enter number you want to search in 1D Binary search: ");
         int key1 = sc.nextInt();
         long before1 = System.nanoTime();
-        System.out.println("Found at index: "+b.SinSearch(arr1, key1));
+        System.out.println(b.SinSearch(arr1, key1));
         long after1 = System.nanoTime();
 
         // System.out.print("Enter number you want to search in 2D search: ");

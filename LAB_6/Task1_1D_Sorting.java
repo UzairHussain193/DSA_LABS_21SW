@@ -7,9 +7,9 @@ class Sorts{
         for (int i=0; i< arr.length; i++){
             for (int j=0; j< arr.length-1; j++){        
                 if (arr[j]>arr[j+1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+                    int temp=arr[j+1];
+                    arr[j+1]=arr[j];
+                    arr[j]=temp;
                 }
             }
         }
@@ -35,7 +35,7 @@ class Sorts{
         for (int i=0; i< arr.length-1; i++){
             int minIndex = i;
             for (int j=i+1; j< arr.length; j++){
-                if (arr[j]<arr[minIndex]){
+                if (arr[minIndex]>arr[j]){
                     minIndex = j;
                 }
             }
@@ -94,6 +94,9 @@ public class Task1_1D_Sorting {
     public static void main(String[] args) {
         
         int [] array = {4, -6, 5, 7, 8, 9, 1, 10, -9};
+        Arrays.sort(array); // this sorts arrays with using built in methods called sort
+        System.out.println("Bubble Sort()  -->  "+Arrays.toString(array));  // deisplay sorted array
+        
         Sorts s = new Sorts();
 
         long before1 = System.nanoTime();
