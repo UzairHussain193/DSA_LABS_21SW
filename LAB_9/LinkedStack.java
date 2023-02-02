@@ -1,4 +1,4 @@
-class LinkedStack<T> {
+public class LinkedStack<T> {
     private Node<T> head;
     private Node pNode;
     private int size;
@@ -53,5 +53,10 @@ class LinkedStack<T> {
                 position++;
             }
             return -1;
+        }
+        public void display(){
+            for (Node h=head;h!=null;h=h.next) {
+                System.out.println(h.data);               
+            }
         }
     }

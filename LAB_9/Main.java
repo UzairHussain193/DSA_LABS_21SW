@@ -4,13 +4,13 @@ public class Main{
         // list.push("HP");
         // list.push("Dell");
         // list.push("ASUS");
-        // System.out.println(list.peek());
+        // list.display();
 
+        ArrayStack<String> a=new ArrayStack<>(3);
+        a.push("A");
+        a.push("B");
+        a.push("C");
+        a.display();
 
-        ArrayStack a=new ArrayStack<>(3);
-        a.push("Apple");
-        a.push("Google");
-        a.push("Microsoft");
-        System.out.println(a.peek()); 
     }
 }

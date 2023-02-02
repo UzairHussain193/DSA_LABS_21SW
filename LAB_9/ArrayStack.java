@@ -1,14 +1,17 @@
+
 import java.util.NoSuchElementException;
 
-class ArrayStack<T> {
+public class ArrayStack<T> {
     private T[] stack;
     private int peek;       // peek is the index number
+    private int size;
     private int capacity;
 
     public ArrayStack(int capacity) {
         this.capacity = capacity;
         stack = (T[]) new Object[capacity];     // we can not create an array of generic class so we type casted here
         peek = -1;
+        size=0;
     }
 
     public void push(T data) {
@@ -17,6 +20,7 @@ class ArrayStack<T> {
         }
         stack[++peek] = data;
         peek++;
+        size++;
     }
 
     public T pop() {
@@ -44,5 +48,13 @@ class ArrayStack<T> {
             }
         }
         return -1;
+    }
+    public void display(){
+        if(isEmpty()){
+            System.out.println("Stack is empty");
+        }
+        for (int i = peek; i >= 0; i--) {
+           System.out.println(stack[i]);
+        }
     }
 }
