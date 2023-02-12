@@ -14,6 +14,4 @@ public class Task4_Binary_Search_Recurrsion {
         return binarySearch(array, target, low, mid - 1);
       }
     }
-
-  }
-  
+}

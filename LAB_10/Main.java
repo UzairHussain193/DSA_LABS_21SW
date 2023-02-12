@@ -14,26 +14,27 @@ public class Main {
         // int n=sc.nextInt();
         // b.printNumbers(n);
 
-        // Task3_Fabonacci c=new Task3_Fabonacci();
-        // Scanner sc=new Scanner(System.in);
-        // System.out.print("Enter limit numbers for fabonacci: ");
-        // int z=sc.nextInt();
-        // for (int i = 0; i < z; i++) {
-        //     System.out.print(c.fibonacci(i) + " ");
-        // }
-
-        Task4_Binary_Search_Recurrsion d=new Task4_Binary_Search_Recurrsion();
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Task3_Fabonacci c=new Task3_Fabonacci();
         Scanner sc=new Scanner(System.in);
-        System.out.print("Enter number to search: ");
-        int target=sc.nextInt();
-        int result = d.binarySearch(array, target, 0, array.length - 1);
-        if (result == -1) {
-            System.out.println("Element not found in the array");
-        } 
-        else {
-            System.out.println("Element found at index: " + result);
+        System.out.print("Enter limit numbers for fabonacci: ");
+        int z=sc.nextInt();
+        for (int i = 0; i < z; i++) {
+            System.out.print(c.fibonacci(i) + " ");
         }
+
+        // Task4_Binary_Search_Recurrsion d=new Task4_Binary_Search_Recurrsion();
+        // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        // Scanner sc=new Scanner(System.in);
+        // System.out.print("Enter number to search: ");
+        // int target=sc.nextInt();
+        // int result = d.binarySearch(array, target, 0, array.length - 1);
+        // if (result == -1) {
+        //     System.out.println("Element not found in the array");
+        // } 
+        // else {
+        //     System.out.println("Element found at index: " + result);
+        // }
+        
 
     }
     
