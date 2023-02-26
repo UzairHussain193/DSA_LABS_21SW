@@ -24,23 +24,23 @@ class Task2_Alphabetic_Tree {
       
         return (leftNodes + 1 + rightNodes);    // adding +1 of root
     }
-    public int height(BinaryTree root2){
-        if(root2==null){
-            return 0;
-        }
-        int leftsize=0;
-        int rightsize=0;
-        BinaryTree temp=root2;
+//     public int height(BinaryTree root2){
+//         if(root2==null){
+//             return 0;
+//         }
+//         int leftsize=0;
+//         int rightsize=0;
+//         BinaryTree temp=root2;
 
-        while(root2.left!=null){
-            leftsize++;
-            root2=root2.left;
-        }while(temp.right!=null){
-            rightsize++;
-            temp=temp.right;
-        }
-        return Math.max(leftsize,rightsize);
-    }
+//         while(root2.left!=null){
+//             leftsize++;
+//             root2=root2.left;
+//         }while(temp.right!=null){
+//             rightsize++;
+//             temp=temp.right;
+//         }
+//         return Math.max(leftsize,rightsize);
+//     }
     // public int height(BinaryTree root2) {
     //     if (root2 == null) {
     //         return -1;
@@ -131,7 +131,7 @@ class Task2_Alphabetic_Tree {
 
         System.out.println("\n\t\t *****   Alphabetic Binary Tree   *******\n\n");
         System.out.println("Size of tree is : "+ tree2.size(root2));
-        System.out.println("Height of tree is : "+ tree2.height(tree2.root2));
+//         System.out.println("Height of tree is : "+ tree2.height(tree2.root2));
         System.out.println("Is Full status of tree is : "+tree2.isFull(root2));
 
         System.out.print("Inorder traversal: ");
